@@ -13,7 +13,7 @@ import time
 fps = 16      # frames per second
 dt = 0.001    # [s] integrator step length
 t_end = 10    # [s] integration time
-N_ped = 2     # number of pedestrians
+N_ped = 3     # number of pedestrians
 Length = 10   # [m] length of corridor. *Closed boundary conditions*
 RK4 = 0       # 1 --> RK4. 0 --> Euler. Euler with very small dt converges to RK4.
 
@@ -115,12 +115,12 @@ if __name__=="__main__":
 
     t1 = time.clock()
 
-    print 'filename ', filename
+    print('filename ', filename)
     constant = float(a)/b*(tau**2)
     if constant < 0.25:
-        print 'No oscillations: constant = %.3f'%constant
+        print('No oscillations: constant = %.3f'%constant)
     else:
-        print 'Oscillations: constant = %.3f'%constant
+        print('Oscillations: constant = %.3f'%constant)
      ######################################################
     simulation(N_ped, t_end, state, Fd, Fr)
     ######################################################
